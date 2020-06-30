@@ -1,0 +1,11 @@
+from appium.webdriver.common.mobileby import By
+enjoy_first=(By.ID,"com.netease.cloudmusic:id/trial")
+search_btn=(By.XPATH,'//android.widget.TextView[@content-desc="搜索"]')
+search_input=(By.ID,"com.netease.cloudmusic:id/search_src_text")
+agree_protol=(By.ID,"com.netease.cloudmusic:id/agreeCheckbox")
+login_btn=(By.ID,"com.netease.cloudmusic:id/login")
+phoneNum_input=(By.ID,"com.netease.cloudmusic:id/cellphone")
+Next_btn=(By.ID,"com.netease.cloudmusic:id/next")
+password_input=(By.ID,"com.netease.cloudmusic:id/password")
+submit_loginbtn=(By.ID,"com.netease.cloudmusic:id/login")
+single_music=(By.LINK_TEXT)

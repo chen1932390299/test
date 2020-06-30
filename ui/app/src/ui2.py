@@ -1,0 +1,32 @@
+# coding=utf-8
+import uiautomator2 as u2
+import time
+
+d = u2.connect('emulator-5554')
+d.wait_timeout=20 # setting wait implicit_wait time
+print(d.info)
+d.app_clear("com.netease.cloudmusic")
+d(text="网易云音乐").click()  # d.app_start/stop("com.netease.cloudmusic")
+d(resourceId="com.netease.cloudmusic:id/agree").click()
+time.sleep(8)
+d(resourceId="com.netease.cloudmusic:id/agreeCheckbox").click()
+d(resourceId="com.netease.cloudmusic:id/login").click()
+d.send_keys("18676743129", clear=True)
+d(resourceId="com.netease.cloudmusic:id/next").click()
+time.sleep(3)
+d.send_keys("498858336.abc", clear=True)
+d(resourceId="com.netease.cloudmusic:id/login").click()
+time.sleep(5)
+d(description="搜索").click()
+d(resourceId="com.netease.cloudmusic:id/search_src_text").click()
+d.send_keys("虚拟", clear=True)
+d(text="虚拟青钢影").click()
+d(resourceId="com.netease.cloudmusic:id/songName", text='Camille,the Steel Shadow ("青钢影 卡蜜尔"主题曲)').click()
+d(resourceId="com.netease.cloudmusic:id/playBtn").click()
+d(description="转到上一层级").click()
+d(resourceId="com.netease.cloudmusic:id/search_src_text").click()
+d.send_keys("虚拟", clear=True)
+d(resourceId="com.netease.cloudmusic:id/songInfoContainer").click()
+d(resourceId="com.netease.cloudmusic:id/songName", text="丢了你（抖音版）（翻自 井胧）").click()
+time.sleep(20)
+d.app_clear("com.netease.cloudmusic")
